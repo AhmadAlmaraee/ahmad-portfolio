@@ -111,7 +111,7 @@ export default function Home() {
       </div>
     </div>
   )
-<<<<<<< Updated upstream
+
 }
 
 const navItems = ["Work", "Services", "Process", "Contact"];
@@ -263,6 +263,4 @@ export function SecondaryHomePage() {
       </div>
     </div>
   );
-=======
->>>>>>> Stashed changes
 }
