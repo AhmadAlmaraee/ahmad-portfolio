@@ -1,39 +1,48 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import Navbar from './components/Navbar'
+import type React from "react"
+import type { Metadata } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import "./globals.css"
+import Navbar from "./components/Navbar"
+
+const _geist = Geist({ subsets: ["latin"] })
+const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'Ahmad - Full Stack Developer',
-  description: 'Professional portfolio showcasing my work as a full stack developer specializing in modern web technologies.',
-  keywords: ['developer', 'portfolio', 'full stack', 'web development', 'Next.js', 'React'],
-  authors: [{ name: 'Ahmad' }],
-  openGraph: {
-    title: 'Ahmad - Full Stack Developer',
-    description: 'Professional portfolio showcasing my work as a full stack developer',
-    type: 'website',
+  title: "Ahmad | Software Engineering Student & Full-Stack Developer",
+  description:
+    "Portfolio of Ahmad - Software Engineering Student specializing in full-stack development with modern web technologies.",
+  generator: "v0.app",
+  icons: {
+    icon: [
+      {
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: "/apple-icon.png",
   },
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="scroll-smooth">
+      <body className={`font-sans antialiased`}>
         <Navbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <footer className="border-t border-[var(--border)] py-8 mt-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-gray-400">
-              <p>&copy; {new Date().getFullYear()} Ahmad. All rights reserved.</p>
-              <p className="text-sm mt-2">Built with Next.js, TypeScript & Tailwind CSS</p>
-            </div>
-          </div>
-        </footer>
+        {children}
+        <Analytics />
       </body>
     </html>
   )

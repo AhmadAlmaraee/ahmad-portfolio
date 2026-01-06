@@ -1,209 +1,118 @@
-export default function About() {
-  const experiences = [
-    {
-      year: '2023 - Present',
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      description: 'Leading development of scalable web applications using Next.js, React, and Node.js. Mentoring junior developers and architecting cloud-native solutions.',
-    },
-    {
-      year: '2021 - 2023',
-      title: 'Full Stack Developer',
-      company: 'Digital Innovations Ltd.',
-      description: 'Developed and maintained multiple client projects using modern web technologies. Improved application performance by 40% through optimization.',
-    },
-    {
-      year: '2019 - 2021',
-      title: 'Frontend Developer',
-      company: 'Creative Web Agency',
-      description: 'Built responsive and accessible web interfaces. Collaborated with designers to bring creative visions to life with pixel-perfect implementations.',
-    },
-  ]
+import { GraduationCap, Target, Heart } from "lucide-react"
+import { Card } from "@/components/ui/card"
 
-  const education = [
-    {
-      year: '2015 - 2019',
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'University of Technology',
-      description: 'Graduated with honors. Focused on software engineering, algorithms, and web development.',
-    },
-  ]
-
-  const stats = [
-    { label: 'Years Experience', value: '5+' },
-    { label: 'Projects Completed', value: '50+' },
-    { label: 'Happy Clients', value: '30+' },
-    { label: 'Code Commits', value: '10K+' },
-  ]
-
+export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            About <span className="gradient-text">Me</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Passionate developer dedicated to creating exceptional digital experiences
-          </p>
-        </div>
+    <main className="min-h-screen py-16 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: "#84994F" }}>
+          About Me
+        </h1>
+        <p className="text-xl text-gray-400 mb-16">Get to know more about my journey and passion</p>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl p-6 text-center hover:border-[var(--primary)] transition-all duration-300 card-hover"
-            >
-              <div className="text-4xl font-bold gradient-text mb-2">
-                {stat.value}
-              </div>
-              <div className="text-gray-400 text-sm">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-12 mb-20">
-          
-          {/* Left Column - Bio */}
-          <div className="lg:col-span-2 space-y-8">
-            <div className="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl p-8">
-              <h2 className="text-3xl font-bold mb-6 flex items-center">
-                <span className="w-2 h-8 bg-gradient-to-b from-[var(--primary)] to-[var(--secondary)] rounded-full mr-4" />
-                My Story
-              </h2>
-              <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  Hello! I'm Ahmad, a passionate full stack developer with over 5 years of experience 
-                  building modern web applications. My journey in software development started during 
-                  my university years, where I discovered my love for creating solutions that make a 
-                  real difference.
-                </p>
-                <p>
-                  I specialize in building scalable, performant, and user-friendly applications using 
-                  cutting-edge technologies. My expertise spans both frontend and backend development, 
-                  with a strong focus on React, Next.js, TypeScript, Node.js, and cloud technologies.
-                </p>
-                <p>
-                  Throughout my career, I've had the privilege of working with diverse teams and clients, 
-                  delivering projects ranging from startups to enterprise-level applications. I'm constantly 
-                  learning and staying up-to-date with the latest industry trends and best practices.
-                </p>
-                <p>
-                  When I'm not coding, you'll find me contributing to open-source projects, writing 
-                  technical blog posts, or exploring new technologies. I believe in the power of 
-                  continuous learning and sharing knowledge with the developer community.
-                </p>
-              </div>
-            </div>
-
-            {/* Experience Section */}
-            <div className="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl p-8">
-              <h2 className="text-3xl font-bold mb-6 flex items-center">
-                <span className="w-2 h-8 bg-gradient-to-b from-[var(--primary)] to-[var(--secondary)] rounded-full mr-4" />
-                Experience
-              </h2>
-              <div className="space-y-6">
-                {experiences.map((exp, index) => (
-                  <div
-                    key={index}
-                    className="relative pl-8 pb-8 border-l-2 border-[var(--border)] last:pb-0"
-                  >
-                    <div className="absolute left-0 top-0 w-4 h-4 -ml-[9px] rounded-full bg-[var(--primary)] border-4 border-[var(--background)]" />
-                    <div className="text-sm text-[var(--primary)] font-semibold mb-1">
-                      {exp.year}
-                    </div>
-                    <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
-                    <div className="text-gray-400 mb-3">{exp.company}</div>
-                    <p className="text-gray-300 leading-relaxed">
-                      {exp.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Education Section */}
-            <div className="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl p-8">
-              <h2 className="text-3xl font-bold mb-6 flex items-center">
-                <span className="w-2 h-8 bg-gradient-to-b from-[var(--primary)] to-[var(--secondary)] rounded-full mr-4" />
-                Education
-              </h2>
-              <div className="space-y-6">
-                {education.map((edu, index) => (
-                  <div
-                    key={index}
-                    className="relative pl-8 border-l-2 border-[var(--border)]"
-                  >
-                    <div className="absolute left-0 top-0 w-4 h-4 -ml-[9px] rounded-full bg-[var(--primary)] border-4 border-[var(--background)]" />
-                    <div className="text-sm text-[var(--primary)] font-semibold mb-1">
-                      {edu.year}
-                    </div>
-                    <h3 className="text-xl font-bold mb-1">{edu.degree}</h3>
-                    <div className="text-gray-400 mb-3">{edu.institution}</div>
-                    <p className="text-gray-300 leading-relaxed">
-                      {edu.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6" style={{ color: "#FFE797" }}>
+            Who I Am
+          </h2>
+          <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
+            <p>
+              I'm Ahmad, a Software Engineering student with a deep passion for creating meaningful digital experiences.
+              My journey into software development began with a curiosity about how things work behind the scenes, and
+              it has evolved into a commitment to building solutions that make a difference.
+            </p>
+            <p>
+              As a full-stack developer, I enjoy working across the entire development stack—from designing intuitive
+              user interfaces to architecting scalable backend systems. I believe great software is where technical
+              excellence meets thoughtful design.
+            </p>
+            <p>
+              I'm constantly learning and staying updated with the latest technologies and best practices. Whether it's
+              exploring a new framework, contributing to open-source projects, or solving challenging problems, I'm
+              always eager to grow and improve my craft.
+            </p>
           </div>
+        </section>
 
-          {/* Right Column - Quick Info */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8" style={{ color: "#FFE797" }}>
+            My Journey
+          </h2>
           <div className="space-y-6">
-            <div className="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl p-8 sticky top-24">
-              <h2 className="text-2xl font-bold mb-6">Quick Info</h2>
-              <div className="space-y-4">
+            <Card className="p-6 bg-[#1a1a1a] border-[#84994F]/30">
+              <div className="flex items-start gap-4">
+                <GraduationCap className="h-8 w-8 mt-1" style={{ color: "#84994F" }} />
                 <div>
-                  <div className="text-sm text-gray-400 mb-1">Location</div>
-                  <div className="text-white font-semibold">Remote / Available</div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Email</div>
-                  <div className="text-white font-semibold">ahmad@example.com</div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Availability</div>
-                  <div className="text-white font-semibold">Open to opportunities</div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Languages</div>
-                  <div className="text-white font-semibold">English, Arabic</div>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: "#FFE797" }}>
+                    Education
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Currently pursuing a Bachelor's degree in Software Engineering. My coursework includes data
+                    structures, algorithms, database systems, software architecture, and web development. I'm gaining
+                    hands-on experience through academic projects and personal initiatives.
+                  </p>
                 </div>
               </div>
+            </Card>
 
-              <div className="mt-8 pt-8 border-t border-[var(--border)]">
-                <h3 className="text-lg font-bold mb-4">Core Values</h3>
-                <div className="space-y-3">
-                  {['Clean Code', 'User-Centric Design', 'Continuous Learning', 'Team Collaboration'].map((value, index) => (
-                    <div key={index} className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-[var(--primary)] mr-3" />
-                      <span className="text-gray-300">{value}</span>
-                    </div>
-                  ))}
+            <Card className="p-6 bg-[#1a1a1a] border-[#84994F]/30">
+              <div className="flex items-start gap-4">
+                <Target className="h-8 w-8 mt-1" style={{ color: "#84994F" }} />
+                <div>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: "#FFE797" }}>
+                    Goals
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    My goal is to become a skilled software engineer who creates impactful products. I'm particularly
+                    interested in full-stack development and building scalable web applications. I'm actively seeking
+                    internship opportunities where I can apply my skills, learn from experienced professionals, and
+                    contribute to meaningful projects.
+                  </p>
                 </div>
               </div>
+            </Card>
 
-              <div className="mt-8">
-                
-                  <a href="/resume.pdf"
-                  download
-                  className="block w-full px-6 py-3 rounded-lg bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white font-semibold text-center hover:shadow-lg hover:shadow-[var(--primary)]/50 transition-all duration-300 hover:scale-105"
-                >
-                  Download Resume
-                </a>
+            <Card className="p-6 bg-[#1a1a1a] border-[#84994F]/30">
+              <div className="flex items-start gap-4">
+                <Heart className="h-8 w-8 mt-1" style={{ color: "#84994F" }} />
+                <div>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: "#FFE797" }}>
+                    Interests
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Beyond coding, I'm passionate about UI/UX design, open-source contributions, and staying current
+                    with tech trends. I enjoy problem-solving through coding challenges, reading tech blogs, and
+                    experimenting with new technologies. I also value collaboration and learning from the developer
+                    community.
+                  </p>
+                </div>
               </div>
-            </div>
+            </Card>
           </div>
+        </section>
 
-        </div>
+        <section>
+          <h2 className="text-3xl font-bold mb-6" style={{ color: "#FFE797" }}>
+            What I Bring
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              "Strong foundation in computer science fundamentals",
+              "Experience with modern web development frameworks",
+              "Problem-solving mindset and analytical thinking",
+              "Attention to detail and code quality",
+              "Effective communication and teamwork skills",
+              "Eagerness to learn and adapt to new technologies",
+            ].map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <div className="mt-1">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#84994F" }} />
+                </div>
+                <p className="text-gray-300 leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
-    </div>
+    </main>
   )
 }
